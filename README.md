@@ -8,7 +8,7 @@ In today’s telecommunications landscape, competition in the mobile space is hi
 
 To retain customers whilst face with shrinking OpEx, telco operators need to have well thought out and implemented retention campaigns. A vital part in launching such a campaign would be to identify customers at risk of churning in an accurate and automated manner.
 
-This aim of this project was to retain customers by preemptively contacting customers and offering them a discount to their service if they re-contract. 
+This aim of this project was to retain customers by pre-emptively contacting customers and offering them a discount to their service if they re-contract. 
 
 
 
@@ -18,7 +18,7 @@ The Data Science Process
 The data used within this project was sourced from Kaggle [here](https://www.kaggle.com/blastchar/telco-customer-churn).
 
 Each row in the data relates to a customer with a label of 'Churn' being 'Yes' or 'No' to indicate if they have churned or not.
-The features in the data include :
+The features in the data include:
 - demographics (e.g. gender, having dependents or partners, seniority) 
 - account and service details (e.g tenure, products taken, contract type, payment methods, monthly and total charges).
 
@@ -27,12 +27,12 @@ The features in the data include :
 - whereas being a senior citizen decreases churn risk
 
 During **Feature Selection** and **Feature Engineering**, uninformative features were dropped e.g. gender, certain services, and the remaining features were transformed:
-- filling in nulls with the median and performing standardizarion (where numeric) 
+- filling in nulls with the median and performing standardization (where numeric) 
 - one hot encoded (where categoric) 
 
 By using **Pipeline** from the sckit-learn library, I was able to transform the test data to the same scales as the train data.
 
-During **Model Selection**, I used cross validation to short list 3 promising algorithms to further tune. I assessed the model's performance on highest recall whilst maintaing decent precision; 
+During **Model Selection**, I used cross validation to short list 3 promising algorithms to further tune. I assessed the model's performance on highest recall whilst maintaining decent precision; 
 > it is more important to identify the most potential churners in order to maximise revenue retention than to minimise misclassing non-churners as churners (this will have some revenue erosion but not as significant as losing a customer).
 
 Moving on to **Model Training**, I utilised randomised search to provide a good starting point to define the hyperparameter space for grid search. Using the results of the grid search, I identified the best model with it's hyperparameters.
